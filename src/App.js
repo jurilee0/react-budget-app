@@ -105,8 +105,14 @@ const App = () => {
       <div
         style={{ display: "flex", justifyContent: "end", marginTop: "1rem" }}
       >
-        <p style={{ fontSize: "2rem" }}>
-          총 지출 <span>0</span>원
+        <p style={{ fontSize: "1.5rem" }}>
+          총 지출{" "}
+          <span>
+            {expenses.reduce((acc, curr) => {
+              return (acc += curr.amount);
+            }, 0)}
+          </span>
+          원
         </p>
       </div>
     </main>
